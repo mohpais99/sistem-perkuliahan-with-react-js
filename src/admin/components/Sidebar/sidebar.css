@@ -1,0 +1,20 @@
+.sidebar {
+    width: 300px;
+    z-index: 1;
+    height: 100%;
+}
+
+.sidebar .menu ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar .menu ul li {
+    background-color: #028A74;
+    border-radius: 10px;
+}
+
+.sidebar .menu ul li a{
+    text-decoration: none;
+    color: #fff;
+}
