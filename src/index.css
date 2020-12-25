@@ -1,8 +1,20 @@
+@font-face {
+  font-family: Poppins;
+  src: url('assets/font/Poppins/Poppins-Regular.ttf');
+}
+
 body {
+  /* background: #F8F9FE; */
+  background: #F8F9FE !important;
   margin: 0;
   font-family: Poppins;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #828282;
+  text-decoration: none !important;
 }
 
 .wrapper {

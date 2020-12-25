@@ -1,0 +1,23 @@
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    border: 1px solid #E0E0E0 !important;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.search .search-button {
+    background: transparent !important;
+    border: none !important;
+    color: #E0E0E0 !important;
+}
+
+.search .search-input {
+    border: none !important;
+    background: transparent;
+}
+
+.search .search-input:focus, .search .search-button {
+    outline: none !important;
+}

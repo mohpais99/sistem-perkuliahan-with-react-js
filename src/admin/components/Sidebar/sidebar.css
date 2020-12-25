@@ -1,20 +1,49 @@
 .sidebar {
+    background-color: #fff !important;
     width: 300px;
     z-index: 1;
     height: 100%;
 }
 
 .sidebar .menu ul {
+    height: 71vh;
     padding: 0;
     list-style: none;
+    position: relative;
 }
 
-.sidebar .menu ul li {
-    background-color: #028A74;
-    border-radius: 10px;
+.sidebar .menu .icon{
+    width: 30px
 }
 
 .sidebar .menu ul li a{
-    text-decoration: none;
+    position: relative;
+}
+
+.sidebar .menu ul li .footer{
+    width: 40px;
+    border-radius: 5px;
+    background: #F2994A;
+}
+
+.sidebar .menu ul li.active {
+    background-color: #028A74;
+    border-radius: 8px;
+}
+
+.sidebar .menu ul li.active a{
     color: #fff;
+}
+
+.sidebar .menu ul li a::before {
+    content: " ";
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #f6f6f6;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    right: 0;
+    transition: opacity .35s;
 }
