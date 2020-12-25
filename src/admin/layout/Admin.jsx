@@ -7,6 +7,11 @@ import { Route, Switch } from 'react-router-dom';
 export class Admin extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            _notificationSystem: null,
+            hasImage: true,
+            width: window.innerWidth
+        };
     }
     getRoutes = (routes) => {
         return routes.map((prop, key) => {

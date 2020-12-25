@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Header } from 'admin/components';
 import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
 import './style.css';
-import { Materi } from 'admin/pages';
+import { Materi } from 'admin/includes';
 
 function Master() {
     const [key, setKey] = useState('materi');
@@ -11,7 +11,7 @@ function Master() {
             <Header title="File" />
             <Container className="master-container" fluid>
                 <Row className="p-4">
-                    <Col style={{border: "1px solid"}}>
+                    <Col>
                         <Tabs 
                             activeKey={key}
                             onSelect={(k) => setKey(k)}>

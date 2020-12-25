@@ -9,6 +9,15 @@
 .nav-tabs .nav-link.active {
     background-color: transparent !important;
     border: none !important;
+    color: #028A74 !important;
+}
+
+.nav.nav-tabs a:hover{
+    color: #028A74;
+}
+
+.nav.nav-tabs a:focus{
+    outline: none !important;
 }
 
 .master-container {

@@ -1,0 +1,15 @@
+.modal-header .close {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    right: 15px;
+    color: #ff1600;
+}
+
+.modal-header .close:hover {
+    color: #ff1111;
+}
+
+.modal-header .close:focus {
+    outline: none !important;
+}
