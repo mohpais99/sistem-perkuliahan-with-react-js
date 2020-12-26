@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Header } from 'admin/components';
 import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
 import './style.css';
-import { Materi } from 'admin/includes';
+import { MateriPages, VideoPages } from 'admin/includes';
 
 function Master() {
     const [key, setKey] = useState('materi');
@@ -16,11 +16,14 @@ function Master() {
                             activeKey={key}
                             onSelect={(k) => setKey(k)}>
                                 <Tab eventKey="materi" title="Materi">
-                                    <Materi />
+                                    <MateriPages />
                                 </Tab>
-                                <Tab eventKey="Video" title="Video">
-                                    <div className="tab-content mt-4 px-3">
-                                        <p>Data Video: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quod magni earum laboriosam aliquam ullam, eos nesciunt ducimus itaque sapiente, animi, eum nihil vel amet cupiditate quidem cumque qui dignissimos?</p>
+                                <Tab eventKey="video" title="Video">
+                                    <VideoPages />
+                                </Tab>
+                                <Tab eventKey="soal" title="Soal">
+                                    <div className="tab-content mt-4 px-3 text-center">
+                                        <h1>No Entry</h1>
                                     </div>
                                 </Tab>
                         </Tabs>

@@ -1,5 +1,7 @@
-import Materi from './Materi';
+import MateriPages from './MateriPages';
+import VideoPages from './VideoPages';
 
 export {
-    Materi
+    MateriPages,
+    VideoPages
 }

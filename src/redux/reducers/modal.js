@@ -1,15 +1,18 @@
 const initialState = {
-    name: null,
-    show: false,
+    id: '',
+    title: '',
+    status: false,
 }
 
 function UserReducer(state=initialState, action) {
     switch (action.type) {
         case "MODAL_SHOW":
+            const {id, title, show} = action.payload
             return {
                 ...state,
-                name: action.payload.name,
-                show: action.payload.show
+                id: id,
+                title: title,
+                status: show
             }
         default:
             return state;

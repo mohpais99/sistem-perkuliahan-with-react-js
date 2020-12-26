@@ -9,7 +9,8 @@ function CustomeModal(props) {
         <>
             <Modal
                 backdrop="static"
-                show={show} 
+                show={show}
+                centered
                 onHide={handleClose}
                 keyboard={false}>
                     <Modal.Header className="d-block text-center position-relative" closeButton>
@@ -17,7 +18,11 @@ function CustomeModal(props) {
                             <span className="font-weight-700">{props.title}</span>
                         </b>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body>
+                        {
+                            props.component
+                        }
+                    </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                             Close

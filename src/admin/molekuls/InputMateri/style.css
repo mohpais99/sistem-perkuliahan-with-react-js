@@ -1,0 +1,31 @@
+.cover {
+    line-height: 8;
+    border-radius: 10px !important;
+    border: none !important;
+    background: #F2F2F2 !important;
+}
+
+.cover input[type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}
+
+.cover input[type="file"], .cover label {
+    border: none;
+    border-radius: 10px;
+    color: #828282;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+    font-weight: 500;
+    outline: none;
+    width: 100%;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+}
+
+.form-label {
+    font-weight: bold;
+}

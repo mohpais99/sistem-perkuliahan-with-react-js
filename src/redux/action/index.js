@@ -1,8 +1,9 @@
 export const setModal = (payload) => {
     return (dispatch) => {
         const data = {
-            name: payload,
-            show: true
+            id: payload.id,
+            title: payload.title,
+            status: payload.show
         }
         return dispatch({type: "MODAL_SHOW", payload: data})
     }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Row, Col, Button} from 'react-bootstrap'
-import { MateriEntry, CustomModal } from 'admin/molekuls';
+import { MateriEntry, CustomModal, InputMateri } from 'admin/molekuls';
 import blog1 from 'assets/img/blog/blog1.jpg';
 import './style.css';
 // import { useDispatch } from 'react-redux';
@@ -12,7 +12,7 @@ function Materi() {
     const data_materi = require('./materi.json')
     const [show, setShow] = useState(false);
     const handleModal = () => {
-        !show ? setShow(true) : setShow(false)
+        setShow(!show)
     }
     // const state = useSelector(state => state.Modal)
     // const dispatch = useDispatch()
@@ -24,9 +24,13 @@ function Materi() {
             {
                 show && (
                     <CustomModal
+                        component={
+                            <InputMateri />
+                        }
                         title="Unggah Materi Baru"
                         show={show} />
                 )
+                
             }
             <Row>
                 <Col className="tab-content px-4">

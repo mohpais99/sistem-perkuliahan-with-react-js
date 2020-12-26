@@ -1,0 +1,35 @@
+[
+    {
+        "fullname": "Ani Riyani",
+        "nim": "11214271",
+        "bod": "19-Maret-1996",
+        "pod": "Tegal",
+        "sex": "Perempuan",
+        "agama": "Islam",
+        "education": "Universita Gunadarma",
+        "jurusan": "Manajemen",
+        "address": "Jl. Jelambar Timur No.46A"
+    },
+    {
+        "fullname": "M Fardian Nopanid",
+        "nim": "72001190013",
+        "bod": "29-November-1999",
+        "pod": "Tegal",
+        "sex": "Laki-Laki",
+        "agama": "Islam",
+        "education": "Universita Bung Karno",
+        "jurusan": "Sistem Informasi",
+        "address": "Jl. Jelambar Timur No.46A"
+    },
+    {
+        "fullname": "Mohamad Pais",
+        "nim": "14115717",
+        "bod": "09-Oktober-1996",
+        "pod": "Jakarta",
+        "sex": "Laki-Laki",
+        "agama": "Islam",
+        "education": "Universita Gunadarma",
+        "jurusan": "Sistem Informasi",
+        "address": "Jl. Taruna No.2B"
+    }
+]
