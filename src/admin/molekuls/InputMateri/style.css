@@ -1,15 +1,14 @@
 .cover {
-    line-height: 8;
-    border-radius: 10px !important;
-    border: none !important;
-    background: #F2F2F2 !important;
+    height: 200px;
+    border-radius: 10px;
+    background: #F2F2F2;
 }
 
 .cover input[type="file"] {
     height: 0;
-    overflow: hidden;
     width: 0;
 }
+
 
 .cover input[type="file"], .cover label {
     border: none;

@@ -1,14 +1,16 @@
-import React from 'react'
-import { Row, Col, Button, Card } from 'react-bootstrap'
+import React from 'react';
+import { Row, Col, Button, Card } from 'react-bootstrap';
+import * as Global from 'config/Global';
 
 function MateriEntry(props) {
+    console.log(props.title + '=>' + props.date);
     return (
         <Col className="mb-4" sm="6" md="4">
             <Card className="shadow">
-                <Card.Img variant="top" src={props.image} />
+                <Card.Img variant="top" src={props.cover} style={{height: "250px", objectFit: "cover"}} />
                 <Card.Body>
                     <h6 className="font-weight-600 mb-0">{props.title}</h6>
-                    <span className="font-12 text-secondary">{props.date}</span>
+                    <span className="font-12 text-secondary">{Global.prettyDate(props.date)}</span>
                 </Card.Body>
                 <Card.Footer className="bg-white">
                     <Row>

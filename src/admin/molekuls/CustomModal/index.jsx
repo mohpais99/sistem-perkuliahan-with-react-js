@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import './style.css';
 
 function CustomeModal(props) {
@@ -23,14 +23,14 @@ function CustomeModal(props) {
                             props.component
                         }
                     </Modal.Body>
-                    <Modal.Footer>
+                    {/* <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
                         <Button variant="primary" onClick={handleClose}>
                             Save Changes
                         </Button>
-                    </Modal.Footer>
+                    </Modal.Footer> */}
             </Modal>
         </>
     )

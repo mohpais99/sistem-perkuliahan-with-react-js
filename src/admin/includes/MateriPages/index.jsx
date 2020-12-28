@@ -1,23 +1,55 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Row, Col, Button} from 'react-bootstrap'
 import { MateriEntry, CustomModal, InputMateri } from 'admin/molekuls';
-import blog1 from 'assets/img/blog/blog1.jpg';
+import { Firebase } from "config";
+// import blog1 from 'assets/img/blog/blog1.jpg';
 import './style.css';
-// import { useDispatch } from 'react-redux';
-// import { setModal } from 'redux/action';
-// import { useSelector } from 'react-redux';
 
 function Materi() {
-    const data_materi = require('./materi.json')
     const [show, setShow] = useState(false);
+    const [materi, setMateri] = useState([])
+    // const {loading, setLoading} = useState(false)
     const handleModal = () => {
         setShow(!show)
     }
-    // const state = useSelector(state => state.Modal)
-    // const dispatch = useDispatch()
-    // const handleModal = () => {
-    //     dispatch(setModal())
+
+
+    useEffect(() => {
+        getMateri()
+    }, [])
+
+    const getMateri = () => {
+        var { uid } = JSON.parse(localStorage.getItem('user'))
+        var urlref = Firebase.database().ref('files/' + uid);
+        return urlref.on('value', (snapshot) => {
+            let response = []
+            snapshot.forEach((childSnapshot) => {
+                var key = childSnapshot.key;
+                var data = childSnapshot.val();
+                response.push({ id: key, ...data});
+            })
+            setMateri(response)
+        })
+    }
+
+    // const getMateri = () => {
+    //     const response = []
+    //     const { uid } = JSON.parse(localStorage.getItem('user'))
+    //     var url = Firebase.database().ref('files/' + uid );
+    //     return url.on('value', (snapshot) => {
+    //         const data = snapshot.val()
+    //         if (data) {
+    //             Object.keys(data).map(key => {
+    //                 return response.push({
+    //                     id: key,
+    //                     data: snapshot.val()[key]
+    //                 })
+    //             })
+    //             const sortedMateri = response.sort((a, b) => b.data.date - a.data.date)
+    //             setMateri(sortedMateri)
+    //         }
+    //     });
     // }
     return (
         <>
@@ -52,13 +84,14 @@ function Materi() {
                     </Row>
                     <Row className="mt-4 my-2">
                         {
-                            data_materi.map((data, i) => 
-                                <MateriEntry
-                                    key={i}
-                                    image={blog1}
-                                    {...data}
-                                />
-                            )
+                            materi.length > 0 ? 
+                                materi.map((prop, i) => 
+                                    <MateriEntry
+                                        key={i}
+                                        {...prop} />
+                                )
+                            :
+                                <Col className="text-center" sm="12" md="12">Empty Data!</Col>
                         }
                     </Row>
                 </Col>

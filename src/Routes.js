@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Admin from 'admin/layout/Admin'
+import Auth from 'auth/layout/Auth'
 
 function Routes() {
     return (
@@ -11,7 +12,12 @@ function Routes() {
                     render={
                         props => <Admin {...props} />
                     } />
-                <Redirect from="/" to="/admpanel" />
+                <Route 
+                    path="/auth"
+                    render={
+                        props => <Auth {...props} />
+                    } />
+                <Redirect from="/" to="/auth" />
             </Switch>
         </Router>
     );
