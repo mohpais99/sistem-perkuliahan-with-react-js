@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import './style.css';
 
 function CustomeModal(props) {
-    const [show, setShow] = useState(props.show);
-    const handleClose = () => setShow(false);
+    const dispatch = useDispatch()
+    const [show, setShow] = useState(props.status);
+    const handleClose = () => {
+        dispatch({type: "MODAL_CLOSE", payload: null})
+        setShow(false)
+    };
     return (
         <>
             <Modal
+                id={props.id}
                 backdrop="static"
                 show={show}
                 centered
@@ -23,14 +29,6 @@ function CustomeModal(props) {
                             props.component
                         }
                     </Modal.Body>
-                    {/* <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
-                        </Button>
-                    </Modal.Footer> */}
             </Modal>
         </>
     )

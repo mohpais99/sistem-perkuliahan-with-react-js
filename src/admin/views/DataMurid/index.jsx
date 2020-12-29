@@ -1,31 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Header } from 'admin/components'
 import { Button, Card, Col, Container, Row, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DataSiswa, CustomModal } from 'admin/molekuls';
+import { DataSiswa } from 'admin/molekuls';
 import './style.css';
+import { useDispatch } from 'react-redux';
 
 function Murid() {
     const data_siswa = require('./siswa.json')
-    const [show, setShow] = useState(false);
-    const [data, setData] = useState({});
+    const dispatch = useDispatch()
     const handleModal = (data) => {
-        setData(data)
-        setShow(!show)
+        const payload = {
+            id: 'siswa-modal',
+            title: 'Detail Siswa',
+            component: <DataSiswa {...data} />,
+            show: true,
+        }
+        dispatch({type: "MODAL_SHOW", payload: payload})
     }
     return (
         <>
-            {
-                show && (
-                    <CustomModal
-                        component={
-                            <DataSiswa {...data} />
-                        }
-                        title="Unggah Materi Baru"
-                        show={show} />
-                )
-                
-            }
             <Header title="Data Murid" />
             <Container className="data-siswa" fluid>
                 <Row className="px-4">

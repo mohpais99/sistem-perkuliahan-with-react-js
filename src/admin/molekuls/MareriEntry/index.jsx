@@ -3,7 +3,6 @@ import { Row, Col, Button, Card } from 'react-bootstrap';
 import * as Global from 'config/Global';
 
 function MateriEntry(props) {
-    console.log(props.title + '=>' + props.date);
     return (
         <Col className="mb-4" sm="6" md="4">
             <Card className="shadow">

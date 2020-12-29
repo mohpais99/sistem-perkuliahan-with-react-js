@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Col, Container, Row } from 'react-bootstrap';
 import { Route, Switch } from 'react-router-dom';
-import routes from '../Routes'
+import routes from '../Routes';
+import '../Style.css';
 
 class Auth extends Component {
     getRoutes = (routes) => {
@@ -23,10 +24,11 @@ class Auth extends Component {
     
     render() {
         return (
-            <div className="wrapper-auth d-flex align-items-center" style={{margin: "0", padding: "0", minHeight: "100vh"}}>
-                <Container>
+            <div className="wrapper-auth d-flex align-items-center">
+                <div className="w-100 bg-custom-g position-absolute" style={{minHeight: "50vh", top: "0"}}></div>
+                <Container className="z-2">
                     <Row>
-                        <Col className="mx-auto" md="6">
+                        <Col className="mx-auto" md="4">
                             <Switch>{this.getRoutes(routes)}</Switch>
                         </Col>
                     </Row>

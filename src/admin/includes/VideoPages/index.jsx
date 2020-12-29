@@ -1,27 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Row, Col, Button } from 'react-bootstrap';
-import { VideoEntry, CustomModal, InputVideo } from 'admin/molekuls';
+import { VideoEntry, InputVideo } from 'admin/molekuls';
+import { useDispatch } from 'react-redux';
 
 function VideoPages() {
     const datavideo = require("./video.json")
-    const [show, setShow] = useState(false);
+    const dispatch = useDispatch()
     const handleModal = () => {
-        setShow(!show)
+        const payload = {
+            id: 'video-modal',
+            title: 'Unggah Video Baru',
+            component: <InputVideo />,
+            show: true,
+        }
+        dispatch({type: "MODAL_SHOW", payload: payload})
     }
     return (
         <>
-            {
-                show && (
-                    <CustomModal
-                        component={
-                            <InputVideo />
-                        }
-                        title="Unggah Video Baru"
-                        show={show} />
-                )
-                
-            }
             <Row>
                 <Col className="tab-content px-4">
                     <Row className="mt-4 my-2">

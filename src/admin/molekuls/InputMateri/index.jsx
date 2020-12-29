@@ -3,8 +3,10 @@ import { Form, Button } from 'react-bootstrap';
 import { Firebase } from "config";
 import * as Global from 'config/Global'
 import './style.css';
+import { useDispatch } from 'react-redux';
 
 function InputMateri() {
+    const dispatch = useDispatch()
     const hiddenFileInput = useRef(null);
     const [title, setTitle] = useState('')
     const [cover, setCover] = useState({name: null, data:null})
@@ -45,8 +47,10 @@ function InputMateri() {
         const materi = await setmateri
         if (materi) {
             alert('berhasil')
+            dispatch({type: "MODAL_CLOSE", payload: null})
         } else {
             alert('fuck')
+            dispatch({type: "MODAL_CLOSE", payload: null})
         }
     }
     const bgImg = {

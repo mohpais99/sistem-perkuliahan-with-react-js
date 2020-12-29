@@ -1,0 +1,8 @@
+.auth button {
+    border-radius: 7px !important;
+}
+
+.auth button:focus {
+    outline: 0 !important;
+    border: none !important;
+}

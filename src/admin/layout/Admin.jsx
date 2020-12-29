@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Sidebar } from 'admin/components';
-import routes from '../Routes'
-import './style.css';
 import { Route, Switch } from 'react-router-dom';
+import { CustomModal } from 'admin/molekuls';
+import { Sidebar } from 'admin/components';
+import { connect } from 'react-redux';
+import routes from '../Routes';
+import './style.css';
 
-export class Admin extends Component {
+class Admin extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,16 +33,27 @@ export class Admin extends Component {
     }
     render() {
         return (
-            <div className="wrapper">
-                <Sidebar 
-                    {...this.props}
-                    routes={routes} />
-                <div className="content">
-                    <Switch>{this.getRoutes(routes)}</Switch>
+            <>
+                {
+                    this.props.modal.status && (
+                        <CustomModal {...this.props.modal} />
+                    )
+                }
+                <div className="wrapper">
+                    <Sidebar 
+                        {...this.props}
+                        routes={routes} />
+                    <div className="content">
+                        <Switch>{this.getRoutes(routes)}</Switch>
+                    </div>
                 </div>
-            </div>
+            </>
         )
     }
 }
 
-export default Admin
+const mapStateToProps = state => ({
+    modal: state.Modal
+});
+
+export default connect(mapStateToProps)(Admin);
