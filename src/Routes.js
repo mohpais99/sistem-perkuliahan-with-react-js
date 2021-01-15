@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Admin from 'admin/layout/Admin'
 import Auth from 'auth/layout/Auth'
 
@@ -17,7 +17,6 @@ function Routes() {
                     render={
                         props => <Auth {...props} />
                     } />
-                <Redirect from="/" to="/login" />
             </Switch>
         </Router>
     );

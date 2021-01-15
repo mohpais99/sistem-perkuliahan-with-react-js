@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import profile from 'assets/img/profile.jpg';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { logoutAccess } from 'config/Helpers';
-import { Firebase } from "config";
 import './sidebar.css';
 
 function Sidebar(props) {
-    // console.log();
-    // const [user, setUser] = useState(Firebase.auth().currentUser)
     const logout = () => {
         logoutAccess()
             .then(res => localStorage.removeItem('user'))
@@ -22,8 +19,8 @@ function Sidebar(props) {
                     <Col className="header py-4 px-5" md="12">
                         <img src={profile} className="rounded-circle" alt="profile-avatar" width="60"/>
                         <div className="data-profile">
-                            <h6 className="font-weight-700 mt-2 mb-0">Tommy Purnomo</h6>
-                            <span className="text-secondary small">Guru Teknik Mesin</span>
+                            <h6 className="font-weight-700 mt-2 mb-0">{props.fullname}</h6>
+                            <span className="text-secondary small">{props.role}</span>
                         </div>
                     </Col>
                     <Col className="menu px-4" md="12">
