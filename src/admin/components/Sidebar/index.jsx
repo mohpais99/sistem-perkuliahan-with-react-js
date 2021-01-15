@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import profile from 'assets/img/profile.jpg';
-import './sidebar.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { logoutAccess } from 'config/Helpers';
+import { Firebase } from "config";
+import './sidebar.css';
 
 function Sidebar(props) {
+    // console.log();
+    // const [user, setUser] = useState(Firebase.auth().currentUser)
+    const logout = () => {
+        logoutAccess()
+            .then(res => localStorage.removeItem('user'))
+            .catch(err => alert('err'))
+    }
     return (
         <div className="position-fixed sidebar shadow">
             <Container >
@@ -39,8 +47,8 @@ function Sidebar(props) {
                                     </li>
                                 )
                             }
-                            <li className="position-absolute py-3 px-4" style={{bottom: "0"}}>
-                                <Link to="/" className="d-flex">
+                            <li onClick={logout} className="position-absolute py-3 px-4" style={{bottom: "0"}}>
+                                <Link to="#" className="d-flex">
                                     <div className="footer p-2 mr-3 text-center text-white icon">
                                         <FontAwesomeIcon icon={["fa", "sign-out-alt"]} />
                                     </div>

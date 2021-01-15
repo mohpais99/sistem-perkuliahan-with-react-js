@@ -17,3 +17,11 @@ export const fetchingData = (url) => {
     console.log('data =>', response);
     return response
 }
+
+export const loginAccess = async (props) => {
+    return await Firebase.auth().signInWithEmailAndPassword(props.email, props.password)
+}
+
+export const logoutAccess = async () => {
+    return await Firebase.auth().signOut()
+}

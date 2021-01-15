@@ -20,6 +20,10 @@
     position: relative;
 }
 
+.sidebar .menu ul li a:hover{
+    color: #028A74 !important;
+}
+
 .sidebar .menu ul li .footer{
     width: 40px;
     border-radius: 5px;
@@ -31,8 +35,8 @@
     border-radius: 8px;
 }
 
-.sidebar .menu ul li.active a{
-    color: #fff;
+.sidebar .menu ul li.active a, .sidebar .menu ul li.active a:hover{
+    color: #fff !important;
 }
 
 .sidebar .menu ul li a::before {

@@ -13,11 +13,11 @@ function Routes() {
                         props => <Admin {...props} />
                     } />
                 <Route 
-                    path="/auth"
+                    path="/"
                     render={
                         props => <Auth {...props} />
                     } />
-                <Redirect from="/" to="/auth" />
+                <Redirect from="/" to="/login" />
             </Switch>
         </Router>
     );

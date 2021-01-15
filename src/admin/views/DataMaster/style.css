@@ -12,14 +12,11 @@
     color: #028A74 !important;
 }
 
+
 .nav.nav-tabs a:hover{
     color: #028A74;
 }
 
 .nav.nav-tabs a:focus{
     outline: none !important;
-}
-
-.master-container {
-    margin-top: -4.5em;
 }

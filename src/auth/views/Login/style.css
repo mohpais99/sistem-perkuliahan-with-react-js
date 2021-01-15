@@ -1,8 +1,14 @@
-.auth button {
+.auth input {
     border-radius: 7px !important;
 }
 
+.auth button {
+    border-radius: 7px !important;
+    border: none !important;
+}
+
 .auth button:focus {
+    box-shadow: none !important;
     outline: 0 !important;
     border: none !important;
 }

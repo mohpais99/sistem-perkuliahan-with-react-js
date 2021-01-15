@@ -33,6 +33,10 @@ a {
   background: #028A74 !important; 
 }
 
+.hover-success:hover {
+  color: #028A74 !important;
+}
+
 .z-2 {
   z-index: 2;
 }
@@ -41,5 +45,11 @@ a {
   position: relative;
   margin: 0;
   padding: 0;
+}
+
+
+
+.master-container {
+  margin-top: -4.5em;
 }
 

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { CustomModal } from 'admin/molekuls';
 import { Sidebar } from 'admin/components';
 import { connect } from 'react-redux';
+import { Provider } from 'config';
 import routes from '../Routes';
 import './style.css';
 
@@ -15,6 +16,22 @@ class Admin extends Component {
             width: window.innerWidth
         };
     }
+    // getRoutes = (routes) => {
+    //     return routes.map((prop, key) => {
+    //         if (prop.layout === "/admpanel") {
+    //             return (
+    //                 <Provider 
+    //                     key={key}
+    //                     path={prop.layout + prop.path}
+    //                     render={props => 
+    //                         <prop.component {...props} />
+    //                     } />
+    //             );
+    //         } else {
+    //             return null
+    //         }
+    //     });
+    // }
     getRoutes = (routes) => {
         return routes.map((prop, key) => {
             if (prop.layout === "/admpanel") {
